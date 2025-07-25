@@ -34,7 +34,7 @@ function Navbar() {
             }}
         >
             <div style={{ display: 'flex', alignItems: 'center' }}>
-                <SummarizeIcon style={{ color: 'white' }} />
+                <SummarizeIcon style={{ color: 'white', height:'2rem', width:'2rem' }} />
             </div>
 
             <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -63,6 +63,9 @@ function Navbar() {
 
                 <Button style={{ color: 'white' }} onClick={() => navigate('/dashboard')}>
                     Dashboard
+                </Button>
+                <Button style={{ color: 'white' }} onClick={() => navigate('/attendance')}>
+                    Attendance
                 </Button>
             </div>
 

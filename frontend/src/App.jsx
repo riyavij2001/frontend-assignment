@@ -9,6 +9,7 @@ import Login from './pages/Login'
 import ApprovalLeave from './pages/Leavemanagement/ApprovalLeave'
 import ApplyLeave from './pages/Leavemanagement/ApplyLeave'
 import Dashboard from './pages/Dashboard'
+import Attendance from './pages/Attendance'
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
             <Route path='/leaveApproval' element={<ApprovalLeave />} />
             <Route path='/applyLeave' element={<ApplyLeave />} />
             <Route path='/dashboard' element={<Dashboard />} />
+            <Route path='/attendance' element={<Attendance />} />
         </Routes>
       </BrowserRouter>
     </div>
