@@ -58,6 +58,7 @@ Build a functional **Attendance App** using **React + Vite** or **Next.js**. The
 - Integrate a simple backend (Node.js/Express, Firebase, etc.).
 - Persist authentication, attendance, and leave data.
 - Responsive UI/UX improvements.
+- Create the necessary Dockerfiles and docker-compose.yml file to make the project environment agnostic.
 
 ---
 
