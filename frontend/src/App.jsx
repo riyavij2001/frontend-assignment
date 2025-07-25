@@ -6,6 +6,9 @@ import Home from './pages/Home'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from './components/Navbar'
 import Login from './pages/Login'
+import ApprovalLeave from './pages/Leavemanagement/ApprovalLeave'
+import ApplyLeave from './pages/Leavemanagement/ApplyLeave'
+import Dashboard from './pages/Dashboard'
 
 
 function App() {
@@ -18,6 +21,9 @@ function App() {
           <Route path="/" element={<Home />}>
           </Route>
             <Route path='/login' element={<Login />} />
+            <Route path='/leaveApproval' element={<ApprovalLeave />} />
+            <Route path='/applyLeave' element={<ApplyLeave />} />
+            <Route path='/dashboard' element={<Dashboard />} />
         </Routes>
       </BrowserRouter>
     </div>

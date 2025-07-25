@@ -1,26 +1,79 @@
-import React from 'react'
+import React, { useState } from 'react';
 import SummarizeIcon from '@mui/icons-material/Summarize';
 import Button from '@mui/material/Button';
-import { Navigate, useNavigate } from 'react-router-dom';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import { useNavigate } from 'react-router-dom';
 
 function Navbar() {
-        
+    const [anchorEl, setAnchorEl] = useState(null);
+    const navigate = useNavigate();
+
+    const handleMenuClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleMenuClose = () => {
+        setAnchorEl(null);
+    };
+
+    const handleNavigate = (path) => {
+        navigate(path);
+        handleMenuClose();
+    };
+
     return (
-        <div style={{ backgroundColor: '#001833', display: 'flex', justifyContent: 'space-between', width: '100%', height: '3rem' }}>
-            <div style={{display:'flex', alignItems:'center'}}>
+        <div
+            style={{
+                backgroundColor: '#001833',
+                display: 'flex',
+                justifyContent: 'space-between',
+                width: '100%',
+                height: '3rem',
+                padding: '0 1rem',
+            }}
+        >
+            <div style={{ display: 'flex', alignItems: 'center' }}>
                 <SummarizeIcon style={{ color: 'white' }} />
             </div>
-            <div style={{display:'flex', alignItems:'center' }}>
-                <Button style={{ color: 'white' }} href='/'>Home</Button>
-                <Button style={{ color: 'white' }}>Leave Management</Button>
-                <Button style={{ color: 'white' }}>Dashboard</Button>
+
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+                <Button style={{ color: 'white' }} onClick={() => navigate('/')}>
+                    Home
+                </Button>
+
+                <Button
+                    style={{ color: 'white' }}
+                    onClick={handleMenuClick}
+                >
+                    Leave Management
+                </Button>
+                <Menu
+                    anchorEl={anchorEl}
+                    open={Boolean(anchorEl)}
+                    onClose={handleMenuClose}
+                >
+                    <MenuItem onClick={() => handleNavigate('/applyLeave')}>
+                        Apply Leave
+                    </MenuItem>
+                    <MenuItem onClick={() => handleNavigate('/leaveApproval')}>
+                        Leave Approval
+                    </MenuItem>
+                </Menu>
+
+                <Button style={{ color: 'white' }} onClick={() => navigate('/dashboard')}>
+                    Dashboard
+                </Button>
             </div>
-            <div style={{display:'flex', alignItems:'center'}}>
-                <Button style={{ color: 'white' }} href='/login'>Login</Button>
+
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+                <Button style={{ color: 'white' }} onClick={() => navigate('/login')}>
+                    Login
+                </Button>
                 <Button style={{ color: 'white' }}>Sign Up</Button>
             </div>
         </div>
-    )
+    );
 }
 
-export default Navbar
+export default Navbar;
