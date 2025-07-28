@@ -132,7 +132,7 @@ function ApplyLeave() {
             overflow: 'hidden'
           }}>
             <Box sx={{ 
-              background: ' #001833',
+              background: '#001833',
               color: 'white',
               p: 3,
               textAlign: 'center'
