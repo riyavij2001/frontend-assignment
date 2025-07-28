@@ -132,7 +132,7 @@ function ApplyLeave() {
             overflow: 'hidden'
           }}>
             <Box sx={{ 
-              background: 'linear-gradient(135deg, #001833 0%, #667eea 100%)',
+              background: ' #001833',
               color: 'white',
               p: 3,
               textAlign: 'center'

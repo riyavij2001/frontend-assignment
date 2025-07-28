@@ -177,7 +177,7 @@ function Home() {
                     <Paper sx={{ 
                         borderRadius: 4,
                         p: 6,
-                        background: 'linear-gradient(135deg, #001833 0%, #667eea 100%)',
+                        background: ' #001833',
                         color: 'white'
                     }}>
                         <Typography variant="h3" sx={{ 
